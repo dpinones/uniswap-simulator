@@ -1,4 +1,4 @@
-Uniswap v3 simulator
+# Uniswap v3 simulator
 
 - npm i
 - npm run generate-types
