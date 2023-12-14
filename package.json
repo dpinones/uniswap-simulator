@@ -1,0 +1,86 @@
+{
+  "name": "@bella-defintech/uniswap-v3-simulator",
+  "version": "0.1.5",
+  "description": "the 'Tuner', a Uniswap V3 Simulator",
+  "keywords": [
+    "uniswap",
+    "uniswapv3",
+    "uniswap-v3",
+    "simulation",
+    "simulator",
+    "defi"
+  ],
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist/**",
+    "abi/**",
+    "tuner.config.js"
+  ],
+  "scripts": {
+    "generate-types": "typechain --target=ethers-v5 --out-dir src/typechain 'abi/*.json'",
+    "build": "tsc",
+    "test": "yarn mocha",
+    "clean": "hardhat clean",
+    "compile": "hardhat compile && yarn generate-types",
+    "script": "yarn ts-node",
+    "testcontracts": "hardhat test",
+    "start": "ts-node src/yas/app.ts"
+  },
+  "license": "BUSL-1.1",
+  "devDependencies": {
+    "@nomiclabs/hardhat-ethers": "^2.0.2",
+    "@nomiclabs/hardhat-waffle": "^2.0.1",
+    "@typechain/ethers-v5": "^7.2.0",
+    "@typechain/hardhat": "^2.3.1",
+    "@types/chai": "^4.2.21",
+    "@types/chai-as-promised": "^7.1.4",
+    "@types/mocha": "^9.0.0",
+    "@types/sinon": "^10.0.4",
+    "@types/sinon-chai": "^3.2.5",
+    "@types/sqlite3": "^3.1.7",
+    "@types/uuid": "^8.3.1",
+    "@uniswap/v3-core": "^1.0.0",
+    "chai": "^4.3.4",
+    "chai-as-promised": "^7.1.1",
+    "ethereum-waffle": "^3.0.0",
+    "hardhat": "^2.6.0",
+    "mocha": "^9.0.3",
+    "mocha-chai-jest-snapshot": "^1.1.3",
+    "mochawesome": "^6.2.2",
+    "sinon": "^11.1.2",
+    "sinon-chai": "^3.7.0",
+    "ts-node": "^10.2.0",
+    "typechain": "^5.2.0",
+    "typescript": "^4.3.5"
+  },
+  "dependencies": {
+    "bignumber.js": "^9.0.2",
+    "dayjs": "^1.10.6",
+    "ethers": "^5.0.0",
+    "graphql": "^16.2.0",
+    "graphql-request": "^3.7.0",
+    "jsbi": "3.1.6",
+    "knex": "^0.95.10",
+    "reflect-metadata": "^0.1.13",
+    "sqlite3": "^5.0.2",
+    "typedjson": "^1.7.0",
+    "uuid": "^8.3.2"
+  },
+  "resolutions": {
+    "tar": "^4.4.18"
+  },
+  "mocha": {
+    "colors": true,
+    "spec": [
+      "test/*.{test,spec}.ts"
+    ],
+    "reporter": [
+      "mochawesome"
+    ],
+    "require": [
+      "ts-node/register"
+    ],
+    "timeout": 360000000
+  }
+}
